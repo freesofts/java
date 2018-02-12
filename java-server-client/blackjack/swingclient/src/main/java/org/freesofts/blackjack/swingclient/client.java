@@ -77,7 +77,7 @@ public class client extends JFrame
 				}
 				catch(Exception e)
 				{
-					System.out.println(e);
+					e.printStackTrace();
 				}
 
 	}
@@ -126,10 +126,10 @@ public class client extends JFrame
 				if (line.startsWith("success"))
 				{
 					int amount = Integer.parseInt(line.substring(7));
-					g = new table(uname,amount);
+					g = new game(uname,amount);
 					socketclose();
-					this.hide();
-					g.show();
+					this.setVisible(false);
+					g.setVisible(true);
 				}
 				else {
 					JOptionPane.showMessageDialog(this,"Invalid Username/Password");
@@ -139,7 +139,7 @@ public class client extends JFrame
 			}
 			catch(Exception e)
 			{
-				System.out.println(e);
+				e.printStackTrace();
 			}
 	}
 	public void socketclose()
@@ -150,7 +150,7 @@ public class client extends JFrame
 		}
 		catch(Exception e)
 		{
-			System.out.println(e);
+			e.printStackTrace();
 		}
 	}
 	private JLabel label1=new JLabel("UserID",JLabel.LEFT);
@@ -164,7 +164,7 @@ public class client extends JFrame
 	private String line;
 	BufferedReader in;
 	PrintWriter out;
-	table g;
+	game g;
 	register r=new register();
 	Socket s;
 }

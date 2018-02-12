@@ -33,7 +33,7 @@ public class game extends JFrame implements Runnable
 		r50 = new JButton("$50");
 		r100 = new JButton("$100");
 		text = new JTextField("0",5);
-		hitbutton.isEnabled(false);
+		hitbutton.setEnabled(false);
 		//doublebutton.isEnabled(false);
 		//clearbutton.isEnabled(false);
 		//r10.isEnabled(false);
@@ -199,12 +199,12 @@ public void abet()
 						if (line.startsWith("disable"))
 						{
 							index=Integer.parseInt(line.substring(7));
-							disablesit(index);
+							//disablesit(index);
 						}
 						if (line.startsWith("enable"))
 						{
 							index=Integer.parseInt(line.substring(6));
-							enablesit(index);
+							//enablesit(index);
 						}
 					}
 				}
