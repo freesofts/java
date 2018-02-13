@@ -1,12 +1,15 @@
-package org.freesofts.blackjack.swingclient;
+package org.freesofts.blackjack.swingclient.view.components;
 import javax.swing.*;
 import javax.swing.event.*;
+
+import org.freesofts.blackjack.swingclient.view.GameView;
+
 import java.awt.event.*;
 import java.awt.*;
 
 public class HandPanel extends JPanel implements ActionListener {
 
-public HandPanel(game g)
+public HandPanel(GameView g)
 {
 
     this.g = g;
@@ -83,7 +86,7 @@ public int getindex()
 	return handle;
 }
 
-private game g;
+private GameView g;
 private boolean isSit=true;
 private JButton sitbutton;
 Label playerName = new Label(" ");

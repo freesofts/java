@@ -1,18 +1,22 @@
-package org.freesofts.blackjack.swingclient;
+package org.freesofts.blackjack.swingclient.view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import org.freesofts.blackjack.swingclient.view.components.HandPanel;
+import org.freesofts.blackjack.swingclient.view.components.deckpanel;
+
 import java.io.*;
 import java.net.*;
-public class game extends JFrame implements Runnable
+public class GameView extends JFrame implements Runnable
 {
 	public static void main (String[] args)
 	{
-		game game1 = new game("gopi",1000);
-		game1.show();
+		GameView game1 = new GameView("gopi",1000);
+		game1.setVisible(true);
 	}
 
-	public game(String player,int amount)
+	public GameView(String player,int amount)
 	{
 
 		setTitle(player);

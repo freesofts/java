@@ -1,4 +1,4 @@
-package org.freesofts.blackjack.swingclient;
+package org.freesofts.blackjack.swingclient.view.components;
 import javax.swing.*;
 import javax.swing.event.*;
 import java.lang.*;

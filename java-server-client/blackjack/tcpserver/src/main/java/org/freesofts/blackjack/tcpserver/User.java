@@ -23,7 +23,7 @@ public class User
 			pstmt.setString(1, usernm);
 			pstmt.setString(2, passwrd);
 			pstmt.setInt(3, 1000);
-			pstmt.setBoolean(4,false);
+			pstmt.setInt(4,0);
 			pstmt.execute();
 			success = true;
 		} catch (SQLException sqle) {
@@ -47,12 +47,13 @@ public class User
 		// Check whether the user is a valid user and he/she is not playing the game
 		try {
 			pstmt = con.prepareStatement(LOGIN_VALIDATE_QUERY);
-			pstmt.setBoolean(1, true);
+			pstmt.setInt(1, 1);
 			pstmt.setString(2, usernm);
 			pstmt.setString(3, passwrd);
 
 			int count = pstmt.executeUpdate();
-			flag = count==1?0:1; 			
+			flag = count==1?0:1; 	
+			System.out.println("User "+usernm+" logged in ("+flag+")");
 		}
 		catch (SQLException sqle) {
 			System.err.println("SQLException: " + sqle.getMessage());
@@ -72,7 +73,7 @@ public class User
 		try {
 
 			pstmt = con.prepareStatement(FLAG_LOGIN_QUERY);
-			pstmt.setBoolean(1, false);
+			pstmt.setInt(1, 0);
 			pstmt.setString(2, usernm);
 			pstmt.execute();
 		} catch (SQLException sqle) {
